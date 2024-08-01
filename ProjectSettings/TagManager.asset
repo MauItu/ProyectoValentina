@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ground
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - ground
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: decoracion
+    uniqueID: 2080601339
+    locked: 0
+  - name: Ground
+    uniqueID: 1000732479
+    locked: 0
+  - name: Moneda
+    uniqueID: 1522264553
+    locked: 0
+  - name: Mario
+    uniqueID: 62974791
+    locked: 0
+  - name: Tuberia
+    uniqueID: 3826436071
+    locked: 0
+  - name: UI
+    uniqueID: 2116879685
+    locked: 0
