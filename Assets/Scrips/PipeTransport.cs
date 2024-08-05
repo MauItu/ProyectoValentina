@@ -4,51 +4,56 @@ using System.Collections;
 
 public class PipeTransport : MonoBehaviour
 {
-    public Transform pipeEntry; // Punto de entrada de la tubería
-    public float transportSpeed = 5f; // Velocidad de movimiento dentro de la tubería
-    public AudioClip pipeSound; // Sonido de la tubería
-    public string nextSceneName; // Nombre de la siguiente escena
+    public float moveDistance = 5f; // Distancia que se moverá el jugador en el eje X
+    public AudioClip moveSound;     // Clip de sonido que se reproducirá
+    public string nextSceneName;    // Nombre de la escena a la que se cambiará
 
     private AudioSource audioSource;
-    private bool isTransporting = false;
-    private Transform player;
+    private bool isMoving = false;
 
     private void Awake()
     {
-        // Inicializa el componente de audio
+        // Inicializa el componente AudioSource
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
-        audioSource.clip = pipeSound;
+        audioSource.clip = moveSound;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !isTransporting)
+        if (collision.CompareTag("Player") && !isMoving)
         {
-            // Comienza el proceso de transporte
-            player = collision.transform;
-            StartCoroutine(TransportPlayer());
+            // Comienza el proceso de mover al jugador y cambiar la escena
+            StartCoroutine(MovePlayerAndChangeScene(collision.transform));
         }
     }
 
-    private IEnumerator TransportPlayer()
+    private IEnumerator MovePlayerAndChangeScene(Transform playerTransform)
     {
-        isTransporting = true;
+        isMoving = true;
 
-        // Reproducir sonido de tubería
+        // Reproduce el sonido
         audioSource.Play();
 
-        // Mover al jugador hacia la entrada de la tubería
-        while (Vector2.Distance(player.position, pipeEntry.position) > 0.1f)
+        // Mueve al jugador en el eje X
+        Vector3 targetPosition = playerTransform.position + new Vector3(moveDistance, 0, 0);
+        float elapsedTime = 0;
+        float duration = 1f; // Duración del movimiento en segundos
+
+        while (elapsedTime < duration)
         {
-            player.position = Vector2.MoveTowards(player.position, pipeEntry.position, transportSpeed * Time.deltaTime);
+            playerTransform.position = Vector3.Lerp(playerTransform.position, targetPosition, (elapsedTime / duration));
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // Esperar a que termine el sonido de la tubería
+        // Asegurar que el jugador llegue exactamente a la posición de destino
+        playerTransform.position = targetPosition;
+
+        // Espera a que el sonido termine
         yield return new WaitForSeconds(audioSource.clip.length);
 
-        // Cambiar a la siguiente escena
+        // Cambia a la siguiente escena
         SceneManager.LoadScene(nextSceneName);
     }
 }
