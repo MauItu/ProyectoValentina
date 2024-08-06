@@ -348,6 +348,7 @@
 "Assets/Scrips/Canva.cs"
 "Assets/Scrips/Coin.cs"
 "Assets/Scrips/GameManager.cs"
+"Assets/Scrips/MouseLevel.cs"
 "Assets/Scrips/Mover.cs"
 "Assets/Scrips/PipeTransport.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
