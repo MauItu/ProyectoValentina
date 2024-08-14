@@ -26,7 +26,7 @@ public class Coin : MonoBehaviour
         GameObject soundObject = new GameObject("CoinSound");
         AudioSource audioSource = soundObject.AddComponent<AudioSource>();
 
-        // Configura el AudioSource
+        // Configura el Audio al recolectar las monedas
         audioSource.clip = coinSound;
         audioSource.playOnAwake = false;
         audioSource.Play();

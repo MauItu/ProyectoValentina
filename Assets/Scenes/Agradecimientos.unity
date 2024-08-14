@@ -1292,7 +1292,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d546287523c5148248a0174c4515bdcb, type: 3}
-    m_FontSize: 36
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
@@ -1303,10 +1303,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.7
-  m_Text: "Estimado jugador, quiero expresar mi m\xE1s sincero agradecimiento por
-    participar en mi videojuego, parte de mi proyecto de grado. Tu tiempo y dedicaci\xF3n
-    son invaluables para el \xE9xito de este proyecto. Espero que hayas disfrutado
-    la experiencia.\n"
+  m_Text: "Felicidades por haber llegado hasta aca jugador, y ya para finalizar,
+    \xBFSab\xEDas que el lenguaje de se\xF1as no es universal? Cada pa\xEDs tiene
+    su propio idioma de se\xF1as, como la Lengua de Se\xF1as Americana (ASL) o la
+    Lengua de Se\xF1as Argentina (LSA). \xA1Es tan diverso como los idiomas hablados!\n"
 --- !u!222 &1951483730
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public int PuntosTotales{get {return puntosTotales;}}
     private int puntosTotales;
     
-    public void SumarPuntos(int puntosASumar)
+    public void SumarPuntos(int puntosASumar) //Metodo para sumar los puntos de las monedas
     {
         puntosTotales += puntosASumar;
         Debug.Log(puntosTotales);

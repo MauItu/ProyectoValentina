@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PipeTransport : MonoBehaviour
 {
-    public float moveDistance = 5f; // Distancia que se moverá el jugador en el eje X
+    public float moveDistance = 5f; // Adentra a mario a la tuberia
     public AudioClip moveSound;     // Clip de sonido que se reproducirá
     public string nextSceneName;    // Nombre de la escena a la que se cambiará
 
